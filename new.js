@@ -1,18 +1,22 @@
-const h1 = document.getElementById("heading");
 
-// Handle button clicks
+var h1 = document.getElementById("heading");
+
 const handleClick = (value) => {
     if (value === 'AC') {
-        h1.innerHTML = 0;  
-    }
-    else if (value === 'pi') {
-        h1.innerHTML += Math.PI; 
-    }
-     else if (h1.innerHTML == 0) {
-        h1.innerHTML = value;
-    } 
-    else {
-        h1.innerHTML += value;
+        h1.innerHTML = 0; 
+    } else if (value === 'x') {   
+        h1.innerHTML = h1.innerHTML.length > 1 ? h1.innerHTML.slice(0, -1) : 0;
+    } else if (value === 'pi') {
+        // Add pi value with limited decimals (e.g., 3.142)
+        if (h1.innerHTML == 0) {
+            h1.innerHTML = "3.142";  // Use pi as a number with 3 decimals
+        } else {
+            h1.innerHTML += "3.142";  // Append pi to the current expression
+        }
+    } else if (h1.innerHTML == 0) {
+        h1.innerHTML = value; 
+    } else {
+        h1.innerHTML += value; 
     }
 };
 
