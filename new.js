@@ -3,10 +3,15 @@ const h1 = document.getElementById("heading");
 // Handle button clicks
 const handleClick = (value) => {
     if (value === 'AC') {
-        h1.innerHTML = 0;
-    } else if (h1.innerHTML == 0) {
+        h1.innerHTML = 0;  
+    }
+    else if (value === 'pi') {
+        h1.innerHTML += Math.PI; 
+    }
+     else if (h1.innerHTML == 0) {
         h1.innerHTML = value;
-    } else {
+    } 
+    else {
         h1.innerHTML += value;
     }
 };
